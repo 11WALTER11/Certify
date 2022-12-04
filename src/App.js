@@ -38,7 +38,7 @@ function App() {
   }
 
   return (
-    <div>
+    <>
       <Header />
 
       <div className="cont">
@@ -80,7 +80,7 @@ function App() {
       <Footer />
 
       
-    </div>
+    </>
   );
 }
 
