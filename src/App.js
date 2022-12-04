@@ -9,8 +9,8 @@ import { useState } from 'react';
 
 
 const events = ["Skit" , "Singing Competition" , "Feel the Reel","xquizite","Ibm Bootcamp " ,
-" SDP: Entrepreneurship Skills" , "Best Strategies to Crack Aptitude Test of MNCs ",
-" Feel The Reel"];
+" SDP: Entrepreneurship Skills" , "Guest Lecture on Cyber Security Awareness and it's Emerging Trends ","Just-A-Minute(JAM)",
+" Feel The Reel","Badminton"];
 function App() {
   const [sName, setsName] = useState("");
   const[YearB, setYearB] = useState("")
@@ -40,40 +40,42 @@ function App() {
   return (
     <>
       <Header />
-
-      <div className="cont">
-        <form>
-          <br />
-          <label for="fname">Student Name:</label>
-          <input type="text" id="fname" name="fname" onChange={(e)=>setsName(e.target.value)} />
-          <br />
+       <div className="text-center">
+        <h2>Active Mind Club</h2>
+        <h2>Certificate Generator</h2>
+        <h4 className="text-muted">(Participation Certificate will be available soon)</h4>
+       </div>
+      <div className="container form-outline mt-4  py-2 px-3">
+        <form >
+         
+          <label for="fname" >Student Name:</label>
+          <input class="form-control mb-3" type="text" id="fname" name="fname" onChange={(e)=>setsName(e.target.value)} />
+          
           <label for="YB">Year/branch:</label>
-          <input type="text" id="YB" name="YB" onChange={(e)=>setYearB(e.target.value)} />
-          <br />
+          <input class="form-control mb-3" type="text" id="YB" name="YB" onChange={(e)=>setYearB(e.target.value)} />
+         
           <label for="POS">Position:</label>
-          <input type="text" id="POS" name="POS" onChange={(e)=>setPosition(e.target.value)} />
-          <br />
+          <input class="form-control mb-3" type="text" id="POS" name="POS" onChange={(e)=>setPosition(e.target.value)} />
           
           
-          <br />
+          
+          
           <label for="ClubN">Enter Club Name :</label>
-          <input type="text" id="ClubN" name="ClubN" onChange={(e)=>setCname(e.target.value)}/>
-          <br />
-          <br />
+          <input class="form-control mb-3" type="text" id="ClubN" name="ClubN" onChange={(e)=>setCname(e.target.value)}/>
+          
           <label for="Edate">Enter Event Date </label>
-          <input type="date" id="Edate" name="Edate" onChange={(e)=>setEd(e.target.value)}/>
-          <br />
-          <br />
+          <input class="form-control mb-3" type="date" id="Edate" name="Edate" onChange={(e)=>setEd(e.target.value)}/>
+         
           <label for="EventName">Choose Event name:</label>
-          <select id="EventName" name="EventName" onChange={(e)=>setEname(e.target.value)}>
+          <select class=" dropdown mb-3" id="EventName" name="EventName" onChange={(e)=>setEname(e.target.value)}>
             <option disabled>Choose an option</option>
 
             {events.map((value) => (
               <option>{value}</option>
             ))}
           </select>
-          <br />
-          <button onClick={pdfGenerator}>Downlaod Certificate</button>
+         <br/>
+          <button className="bg-info btn text-center " onClick={pdfGenerator}>Downlaod Certificate</button>
         </form>
       </div>
       

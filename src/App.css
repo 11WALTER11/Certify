@@ -1,15 +1,6 @@
-
-
-.cont{
-  border: 2px solid black;
-  height: 20em;
-  width: auto;
-  margin-top:2em;
-  border-radius: 30px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-button{
-  margin-left: 50%;
-
+.form-outline{
+  border: 3px solid black ;
+  border-radius:6px;
+  margin-right: 4em;
+  
 }
