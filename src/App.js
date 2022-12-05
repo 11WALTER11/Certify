@@ -8,10 +8,10 @@ import PCertificate from '../src/certificate/participationC.png'// eslint-disabl
 import { useState } from 'react';
 
 
-const events = ["Skit" , "Singing Competition" , "Feel the Reel","xquizite","Ibm Bootcamp " ,
-" SDP: Entrepreneurship Skills" , "Guest Lecture on Cyber Security Awareness and it's Emerging Trends ","Just-A-Minute(JAM)",
-" Feel The Reel","Badminton"];
-function App() {
+// const events = ["Skit" , "Singing Competition" , "Feel the Reel","xquizite","Ibm Bootcamp " ,
+// " SDP: Entrepreneurship Skills" , "Guest Lecture on Cyber Security Awareness and it's Emerging Trends ","Just-A-Minute(JAM)",
+// " Feel The Reel","Badminton"];
+const App=()=> {
   const [sName, setsName] = useState("");
   const[YearB, setYearB] = useState("")
   const[position, setPosition] = useState("");
@@ -28,7 +28,7 @@ function App() {
            doc.text(238,200,sName,);  // Student Name
            
            doc.setFontSize(13);
-           doc.setFont('time','italic',);
+           doc.setFont('time','bold',);
            doc.text(122,232,YearB);    // Year branch
            doc.text(233,232,position); // position
            doc.text(358,232,sEname); // Event name
@@ -65,15 +65,11 @@ function App() {
           
           <label for="Edate">Enter Event Date </label>
           <input class="form-control mb-3" type="date" id="Edate" name="Edate" onChange={(e)=>setEd(e.target.value)}/>
+          
+          <label for="EventName">Enter Event Name </label>
+          <input class="form-control mb-3"  id="EventName" name="EventName" onChange={(e)=>setEname(e.target.value)}/>
          
-          <label for="EventName">Choose Event name:</label>
-          <select class=" dropdown mb-3" id="EventName" name="EventName" onChange={(e)=>setEname(e.target.value)}>
-            <option disabled>Choose an option</option>
-
-            {events.map((value) => (
-              <option>{value}</option>
-            ))}
-          </select>
+          
          <br/>
           <button className="bg-info btn text-center " onClick={pdfGenerator}>Downlaod Certificate</button>
         </form>
