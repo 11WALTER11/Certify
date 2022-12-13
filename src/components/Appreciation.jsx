@@ -35,7 +35,7 @@ const CLUBADVISOR = [
   "Mr Mohd Suaib",
   "Dr mohd Akbar",
   "Mr Mohd Usman khan",
-  "Mrs Saleha mariyam",
+  "Mrs Saleha Mariyam",
   "Dr Faiyaz ahmad",
   "Mr Anwar Ahmad Sheikh",
 ];

@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import jsPDF from "jspdf";
 // import * as XLSX from "xlsx";
+import ReactLoading from 'react-loading';
 
 import PCertificate from "../certificate/participationC.png";
 import akbarsir from "../Signatures/akbarsir.png";
@@ -16,7 +17,7 @@ const Random = (length)=> {
   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   var charactersLength = characters.length;
   for ( var i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength*2));
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
   }
   return result;
 }
