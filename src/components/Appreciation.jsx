@@ -12,15 +12,16 @@ import ACertificate from "../certificate/appreciationC.png";
 // " SDP: Entrepreneurship Skills" , "Guest Lecture on Cyber Security Awareness and it's Emerging Trends ","Just-A-Minute(JAM)",
 // " Feel The Reel","Badminton"];
 
-const Random = (length)=> {
-  var result           = '';
-  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+const Random = (length) => {
+  var result = "";
+  var characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   var charactersLength = characters.length;
-  for ( var i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
   }
   return result;
-}
+};
 
 const CLUBS = [
   "Tech Club",
@@ -41,7 +42,6 @@ const CLUBADVISOR = [
 ];
 
 const Appreciation = () => {
- 
   const [sName, setsName] = useState("");
   const [YearB, setYearB] = useState("");
   const [position, setPosition] = useState("");
@@ -49,18 +49,22 @@ const Appreciation = () => {
   const [Cname, setCname] = useState("");
   const [Ed, setEd] = useState("");
   const [CA, setCA] = useState("");
-  
-  
-  const EventShortForm=()=>{
-    if (Cname==="Tech Club"){ return `TC`   }
-    else if(Cname==="Social Responsibilty Club"){ return `SRC`}
-    else if(Cname==="Art&Cultural Club"){ return `ACC`}
-    else if(Cname==="Sports Club"){ return `SPT`}
-    else if(Cname==="Literary Club"){ return `LIT`}
-    else{ return `CC`}
-    
-  }
 
+  const EventShortForm = () => {
+    if (Cname === "Tech Club") {
+      return `TC`;
+    } else if (Cname === "Social Responsibilty Club") {
+      return `SRC`;
+    } else if (Cname === "Art&Cultural Club") {
+      return `ACC`;
+    } else if (Cname === "Sports Club") {
+      return `SPT`;
+    } else if (Cname === "Literary Club") {
+      return `LIT`;
+    } else {
+      return `CC`;
+    }
+  };
 
   const pdfGenerator = () => {
     var doc = new jsPDF("landscape", "px", "a4", "false");
@@ -69,9 +73,9 @@ const Appreciation = () => {
     doc.setFont("courier", "bolditalic");
     doc.text(238, 200, sName); // Student Name
 
-    doc.setFontSize(9)
-   doc.setFont("time", "bold");
-   doc.text(389,73,`IU/CSE/AMC-${EventShortForm()}/${Ed}/${Random(5)}`)
+    doc.setFontSize(9);
+    doc.setFont("time", "bold");
+    doc.text(389, 73, `IU/CSE/AMC-${EventShortForm()}/${Ed}/${Random(5)}`);
 
     doc.setFontSize(13);
     doc.setFont("time", "bold");
@@ -118,21 +122,23 @@ const Appreciation = () => {
 
   return (
     <>
-      <div className="text-center">
+      <div className=" header w- text-center">
         <h2>Appreciation Certificate</h2>
       </div>
-      <div className="container form-outline mt-4  py-2 px-3">
-        <form>
+      <div className="container form-outline mt-4 ">
+        <form className="py-2 px-3">
           <label for="fname">Student Name:</label>
           <input
-            class="form-control mb-3"
+            class="col-md-4 form-control mb-3"
             type="text"
             id="fname"
             name="fname"
             onChange={(e) => setsName(e.target.value)}
           />
 
-          <label for="YB">Year/branch: <h6 className="text-muted">(Ex: 4 Y/CSE)</h6></label>
+          <label for="YB">
+            Year/branch: <h6 className="text-muted">(Ex: 4 Y/CSE)</h6>
+          </label>
           <input
             class="form-control mb-3"
             type="text"
@@ -182,10 +188,10 @@ const Appreciation = () => {
             name="EventName"
             onChange={(e) => setEname(e.target.value)}
           />
-           <label for="CA">Select Your Club Advisor</label>
+          <label for="CA">Select Your Club Advisor</label>
           <select
             name="CA"
-            className="form-control mb-3"
+            className="form-control mb-3 sm"
             onChange={(e) => setCA(e.target.value)}
           >
             <option deafault selected disabled>
@@ -203,9 +209,15 @@ const Appreciation = () => {
           </select>
 
           <br />
-          <button className="bg-info btn text-center " onClick={pdfGenerator}>
-            Download Certificate
-          </button>
+          <center>
+            {" "}
+            <button
+              className="bg-dark text-white btn text-center "
+              onClick={pdfGenerator}
+            >
+              Download Certificate
+            </button>
+          </center>
         </form>
       </div>
     </>

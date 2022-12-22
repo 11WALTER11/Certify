@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import jsPDF from "jspdf";
 // import * as XLSX from "xlsx";
-import ReactLoading from 'react-loading';
+import ReactLoading from "react-loading";
 
 import PCertificate from "../certificate/participationC.png";
 import akbarsir from "../Signatures/akbarsir.png";
@@ -12,33 +12,33 @@ import suaibsir from "../Signatures/suaibsir.png";
 import usmansir from "../Signatures/usmansir.png";
 import salehamam from "../Signatures/salehamam.png";
 
-const Random = (length)=> {
-  var result           = '';
-  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+const Random = (length) => {
+  var result = "";
+  var characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   var charactersLength = characters.length;
-  for ( var i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
   }
   return result;
-}
+};
 
-
-
-const Participationc=() => {
-
-  const EventShortForm=()=>{
-    if (Cname==="Tech Club"){ return `TC`   }
-    else if(Cname==="Social Responsibilty Club"){ return `SRC`}
-    else if(Cname==="Art&Cultural Club"){ return `ACC`}
-    else if(Cname==="Sports Club"){ return `SPT`}
-    else if(Cname==="Literary Club"){ return `LIT`}
-    else{ return `CC`}
-    
-  }
-
-
-
-
+const Participationc = () => {
+  const EventShortForm = () => {
+    if (Cname === "Tech Club") {
+      return `TC`;
+    } else if (Cname === "Social Responsibilty Club") {
+      return `SRC`;
+    } else if (Cname === "Art&Cultural Club") {
+      return `ACC`;
+    } else if (Cname === "Sports Club") {
+      return `SPT`;
+    } else if (Cname === "Literary Club") {
+      return `LIT`;
+    } else {
+      return `CC`;
+    }
+  };
 
   const CLUBADVISOR = [
     "Mr Mohd Suaib",
@@ -48,7 +48,14 @@ const Participationc=() => {
     "Dr Faiyaz Ahamad",
     "Mr Anwar Ahmad Sheikh",
   ];
-  const CLUBS=["Tech Club","Social Responsibilty Club","Art&Cultural Club","Sports Club","Literary Club","Code Club"]
+  const CLUBS = [
+    "Tech Club",
+    "Social Responsibilty Club",
+    "Art&Cultural Club",
+    "Sports Club",
+    "Literary Club",
+    "Code Club",
+  ];
 
   const [sName, setsName] = useState("");
   const [YearB, setYearB] = useState("");
@@ -82,12 +89,9 @@ const Participationc=() => {
     doc.setFont("courier", "bolditalic");
     doc.text(242, 200, sName); // Student Name
 
-   doc.setFontSize(9)
-   doc.setFont("time", "bold");
-   doc.text(389,73,`IU/CSE/AMC-${EventShortForm()}/${Ed}/${Random(5)}`)
-
-  
-
+    doc.setFontSize(9);
+    doc.setFont("time", "bold");
+    doc.text(389, 73, `IU/CSE/AMC-${EventShortForm()}/${Ed}/${Random(5)}`);
 
     doc.setFontSize(13);
     doc.setFont("time", "bold");
@@ -133,94 +137,106 @@ const Participationc=() => {
 
   return (
     <>
-      <div className="text-center">
+      <div className=" header  text-center">
         <h2>Participation Certificate</h2>
       </div>
-      <div className="container form-outline mt-4  py-2 px-3">
-        <form>
-          <label for="fname">Student Name:</label>
-          <input
-            class="form-control mb-3"
-            type="text"
-            id="fname"
-            name="fname"
-            onChange={(e) => setsName(e.target.value)}
-          />
+      <div className=" container  form-outline mt-4 ">
+        <div className="">
+          <div className="form-group">
+            <form className=" py-2 px-3">
+              <label for="fname">Student Name:</label>
+              <input
+                class="form-control mb-3"
+                type="text"
+                id="fname"
+                name="fname"
+                onChange={(e) => setsName(e.target.value)}
+              />
 
-          <label for="YB">Year/branch: <h6 className="text-muted">(Ex: 4 Y/CSE)</h6></label>
-          <input
-            class="form-control mb-3"
-            type="text"
-            id="YB"
-            name="YB"
-            onChange={(e) => setYearB(e.target.value)}
-          />
+              <label for="YB">
+                Year/branch: <h6 className="text-muted">(Ex: 4 Y/CSE)</h6>
+              </label>
+              <input
+                class="form-control mb-3"
+                type="text"
+                id="YB"
+                name="YB"
+                onChange={(e) => setYearB(e.target.value)}
+              />
 
-          <label for="ClubN">Choose Club:</label>
-          <select class="form-control mb-3"
-            type="text"
-            id="ClubN"
-            name="ClubN"
-            onChange={(e) => setCname(e.target.value)}>
-          <option deafault selected disabled>
-              Choose an option
-            </option>
+              <label for="ClubN">Choose Club:</label>
+              <select
+                class="form-control mb-3"
+                type="text"
+                id="ClubN"
+                name="ClubN"
+                onChange={(e) => setCname(e.target.value)}
+              >
+                <option deafault selected disabled>
+                  Choose an option
+                </option>
 
-           {CLUBS.map((value) => (
+                {CLUBS.map((value) => (
                   <option>{value}</option>
-                ))} 
-          </select>
-          
+                ))}
+              </select>
 
-          <label for="Edate">Enter Event Date </label>
-          <input
-            class="form-control mb-3"
-            type="date"
-            id="Edate"
-            name="Edate"
-            onChange={(e) => setEd(e.target.value)}
-          />
+              <label for="Edate">Enter Event Date </label>
+              <input
+                class="form-control mb-3"
+                type="date"
+                id="Edate"
+                name="Edate"
+                onChange={(e) => setEd(e.target.value)}
+              />
 
-          <label for="EventName">Enter Event Name </label>
-          
-          <input
-            class="form-control mb-3"
-            id="EventName"
-            name="EventName"
-            onChange={(e) => setEname(e.target.value)}
-          />
+              <label for="EventName">Enter Event Name </label>
 
-          <label for="CA">Select Your Club Advisor</label>
-          <select
-            name="CA"
-            className="form-control mb-3"
-            onChange={(e) => setCA(e.target.value)}
-          >
-            <option deafault selected disabled>
-              Choose an option
-            </option>
-            {/* {CA.map((value) => (
+              <input
+                class="form-control mb-3"
+                id="EventName"
+                name="EventName"
+                onChange={(e) => setEname(e.target.value)}
+              />
+
+              <label for="CA">Select Your Club Advisor</label>
+              <select
+                name="CA"
+                className="form-control mb-3"
+                onChange={(e) => setCA(e.target.value)}
+              >
+                <option deafault selected disabled>
+                  Choose an option
+                </option>
+                {/* {CA.map((value) => (
                   <option>{value}</option>
                 ))} */}
-            <option>Mr Mohd Suaib</option>
-            <option>Dr Mohd Akbar</option>
-            <option>Mr Mohd Usman khan</option>
-            <option>Mrs Saleha Mariyam</option>
-            <option>Dr Faiyaz Ahamad</option>
-            <option>Mr Anwar Ahmad Sheikh</option>
-          </select>
+                <option>Mr Mohd Suaib</option>
+                <option>Dr Mohd Akbar</option>
+                <option>Mr Mohd Usman khan</option>
+                <option>Mrs Saleha Mariyam</option>
+                <option>Dr Faiyaz Ahamad</option>
+                <option>Mr Anwar Ahmad Sheikh</option>
+              </select>
 
-          {/* <h1>Parse Excel</h1>
+              {/* <h1>Parse Excel</h1>
           <input type="file" onChange={(e) => handleFile(e)} /> */}
 
-          <br />
-          <button className="bg-info btn text-center " onClick={pdfGenerator}>
-            Download Certificate
-          </button>
-        </form>
+              <br />
+              <center>
+                <button
+                  className="bg-dark text-white btn "
+                  onClick={pdfGenerator}
+                >
+                  Download Certificate
+                </button>
+              </center>
+            </form>
+          </div>
+        </div>
       </div>
     </>
   );
-}
+};
 
 export default Participationc;
