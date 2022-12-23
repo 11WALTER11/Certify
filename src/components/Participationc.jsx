@@ -140,7 +140,7 @@ const Participationc = () => {
       <div className=" header  text-center">
         <h2>Participation Certificate</h2>
       </div>
-      <div className=" container  form-outline mt-4 ">
+      <div className=" container  form-outline mt-4 col align-self-center w-50">
         <div className="">
           <div className="form-group">
             <form className=" py-2 px-3">

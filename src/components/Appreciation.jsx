@@ -125,7 +125,7 @@ const Appreciation = () => {
       <div className=" header w- text-center">
         <h2>Appreciation Certificate</h2>
       </div>
-      <div className="container form-outline mt-4 ">
+      <div className="container form-outline mt-4  col align-self-center w-50">
         <form className="py-2 px-3">
           <label for="fname">Student Name:</label>
           <input
