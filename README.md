@@ -26,7 +26,7 @@ npm run test
 ```
 ## NOTE
 
-**src/Signatures folder is removed, you can add your folder in src and add signatures inside that folder. 
+**src/Signatures folder is removed, you can add your folder in src and add signatures inside that folder.** 
 
 
 ## Author
