@@ -1,5 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+#Confidential 
+src/Signatures/
 
 # dependencies
 /node_modules
@@ -23,6 +25,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-#Confidential 
-src/Signatures/
 
