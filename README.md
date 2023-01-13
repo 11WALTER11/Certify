@@ -3,7 +3,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> Certify is a react application used to generate certificates (Client React.Js , Library JsPDF)
+> Certify is a react application used to generate certificates (Client: React.Js , Library: JsPDF)
 
 
 ### 🏠 [Homepage](https://github.com/11WALTER11/CertificateGenerator)
