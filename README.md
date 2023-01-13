@@ -24,6 +24,9 @@ npm start
 ```sh
 npm run test
 ```
+## Note
+* src/Signatures folder is removed add your signatures and edit the code accordingly 
+
 
 ## Author
 
