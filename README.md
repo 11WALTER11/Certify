@@ -25,7 +25,7 @@ npm start
 npm run test
 ```
 ## Note
-* src/Signatures folder is removed add your signatures and edit the code accordingly 
+**src/Signatures folder is removed add your signatures and edit the code accordingly** 
 
 
 ## Author
