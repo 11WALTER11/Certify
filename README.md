@@ -24,7 +24,9 @@ npm start
 ```sh
 npm run test
 ```
+## NOTE
 
+**src/Signatures folder is removed, you can add your folder in src and place signature inside that folder. 
 
 
 ## Author
