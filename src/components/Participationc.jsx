@@ -5,12 +5,12 @@ import jsPDF from "jspdf";
 import ReactLoading from "react-loading";
 
 import PCertificate from "../certificate/participationC.png";
-import akbarsir from "../Signatures/akbarsir.png";
-import anwarsir from "../Signatures/anwarsir.png";
-import faiyazsir from "../Signatures/faiyazsir.png";
-import suaibsir from "../Signatures/suaibsir.png";
-import usmansir from "../Signatures/usmansir.png";
-import salehamam from "../Signatures/salehamam.png";
+// import akbarsir from "../Signatures/akbarsir.png";
+// import anwarsir from "../Signatures/anwarsir.png";
+// import faiyazsir from "../Signatures/faiyazsir.png";
+// import suaibsir from "../Signatures/suaibsir.png";
+// import usmansir from "../Signatures/usmansir.png";
+// import salehamam from "../Signatures/salehamam.png";
 
 const Random = (length) => {
   var result = "";
@@ -101,32 +101,32 @@ const Participationc = () => {
     doc.text(290, 267, Ed); // event Date
 
     if (CA === CLUBADVISOR[0]) {
-      doc.addImage(suaibsir, "PNG", 130, 310, 50, 40);
+      // doc.addImage(suaibsir, "PNG", 130, 310, 50, 40);
       doc.setFont("courier");
       doc.setFontSize(12);
       doc.text(123, 358, CLUBADVISOR[0]);
     } else if (CA === CLUBADVISOR[1]) {
-      doc.addImage(akbarsir, "PNG", 115, 280, 90, 80);
+      // doc.addImage(akbarsir, "PNG", 115, 280, 90, 80);
       doc.setFont("courier");
       doc.setFontSize(12);
       doc.text(123, 358, CLUBADVISOR[1]);
     } else if (CA === CLUBADVISOR[2]) {
-      doc.addImage(usmansir, "PNG", 115, 280, 90, 80);
+      // doc.addImage(usmansir, "PNG", 115, 280, 90, 80);
       doc.setFont("courier");
       doc.setFontSize(12);
       doc.text(105, 358, CLUBADVISOR[2]);
     } else if (CA === CLUBADVISOR[3]) {
-      doc.addImage(salehamam, "PNG", 130, 304, 50, 40);
+      // doc.addImage(salehamam, "PNG", 130, 304, 50, 40);
       doc.setFont("courier");
       doc.setFontSize(12);
       doc.text(100, 358, CLUBADVISOR[3]); // saleha mam
     } else if (CA === CLUBADVISOR[4]) {
-      doc.addImage(faiyazsir, "PNG", 130, 300, 50, 40);
+      // doc.addImage(faiyazsir, "PNG", 130, 300, 50, 40);
       doc.setFont("courier");
       doc.setFontSize(12);
       doc.text(125, 358, CLUBADVISOR[4]);
     } else if (CA === CLUBADVISOR[5]) {
-      doc.addImage(anwarsir, "PNG", 130, 314, 50, 40);
+      // doc.addImage(anwarsir, "PNG", 130, 314, 50, 40);
       doc.setFont("courier");
       doc.setFontSize(11.5);
       doc.text(100, 358, CLUBADVISOR[5]);

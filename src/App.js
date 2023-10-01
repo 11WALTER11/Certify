@@ -16,8 +16,7 @@ const App = () => {
   return (
     <>
       <div className="container mt-4">
-        <h2 className="text-center">Active Mind Club</h2>
-        <h4 className="text-center">Certificate Generator</h4>
+        <h2 className="text-center">Certificate Generator</h2>
 
         <div className="  text-center mb-5 mt-5 bg-transparent ">
           <h5>Choose Type of certificate you want to Genearte :</h5>
@@ -49,10 +48,8 @@ const App = () => {
             <label class="btn btn-outline-dark" for="btnradio3">
               Participation Certificate
             </label>
-         </div>
-          
           </div>
-     
+        </div>
 
         {selectedForm ? <Participationc /> : <Appreciation />}
       </div>
