@@ -41,7 +41,7 @@ npm run test
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/11WALTER11/CertificateGenerator/issues). 
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/11WALTER11/Certify/issues). 
 
 [Contribution Guide](https://github.com/11WALTER11/Certify/blob/master/CONTRIBUTION.md)
 
