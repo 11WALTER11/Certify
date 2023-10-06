@@ -20,4 +20,4 @@ jobs:
         run: npm install
 
       - name: Run Update Script
-        run: node .github/scripts/update-contributors.js
+        run: node .github/Scripts/update-contributors.js
