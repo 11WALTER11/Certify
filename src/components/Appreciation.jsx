@@ -42,24 +42,34 @@ const CLUBADVISOR = [
 ];
 
 const Appreciation = () => {
-  const [sName, setsName] = useState("");
-  const [YearB, setYearB] = useState("");
-  const [position, setPosition] = useState("");
-  const [sEname, setEname] = useState("");
-  const [Cname, setCname] = useState("");
-  const [Ed, setEd] = useState("");
-  const [CA, setCA] = useState("");
+  const [formData, setFormData] = useState({
+    sName: "",
+    YearB: "",
+    position: "",
+    sEname: "",
+    Cname: "",
+    Ed: "",
+    CA: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
   const EventShortForm = () => {
-    if (Cname === "Tech Club") {
+    if (formData.Cname === "Tech Club") {
       return `TC`;
-    } else if (Cname === "Social Responsibilty Club") {
+    } else if (formData.Cname === "Social Responsibilty Club") {
       return `SRC`;
-    } else if (Cname === "Art&Cultural Club") {
+    } else if (formData.Cname === "Art&Cultural Club") {
       return `ACC`;
-    } else if (Cname === "Sports Club") {
+    } else if (formData.Cname === "Sports Club") {
       return `SPT`;
-    } else if (Cname === "Literary Club") {
+    } else if (formData.Cname === "Literary Club") {
       return `LIT`;
     } else {
       return `CC`;
@@ -71,41 +81,41 @@ const Appreciation = () => {
     doc.addImage(ACertificate, "PNG", 65, 20, 500, 400);
     doc.setFontSize(15);
     doc.setFont("courier", "bolditalic");
-    doc.text(238, 200, sName); // Student Name
+    doc.text(238, 200, formData.sName); 
 
     doc.setFontSize(9);
     doc.setFont("time", "bold");
-    doc.text(389, 73, `IU/CSE/AMC-${EventShortForm()}/${Ed}/${Random(5)}`);
+    doc.text(389, 73, `IU/CSE/AMC-${EventShortForm()}/${formData.Ed}/${Random(5)}`);
 
     doc.setFontSize(13);
     doc.setFont("time", "bold");
-    doc.text(122, 232, YearB); // Year branch
-    doc.text(233, 232, position); // position
-    doc.text(358, 232, sEname); // Event name
-    doc.text(173, 247, Cname); // Club name
-    doc.text(290, 261, Ed); // event Date
+    doc.text(122, 232, formData.YearB); 
+    doc.text(233, 232, formData.position); 
+    doc.text(358, 232, formData.sEname); 
+    doc.text(173, 247, formData.Cname); 
+    doc.text(290, 261, formData.Ed); 
 
-    if (CA === CLUBADVISOR[0]) {
+    if (formData.CA === CLUBADVISOR[0]) {
       // doc.addImage(suaibsir, "PNG", 130, 310, 50, 40);
       doc.setFont("courier");
       doc.setFontSize(12);
       doc.text(123, 358, CLUBADVISOR[0]);
-    } else if (CA === CLUBADVISOR[1]) {
+    } else if (formData.CA === CLUBADVISOR[1]) {
       // doc.addImage(akbarsir, "PNG", 115, 280, 90, 80);
       doc.setFont("courier");
       doc.setFontSize(12);
       doc.text(123, 358, CLUBADVISOR[1]);
-    } else if (CA === CLUBADVISOR[2]) {
+    } else if (formData.CA === CLUBADVISOR[2]) {
       // doc.addImage(usmansir, "PNG", 115, 280, 90, 80);
       doc.setFont("courier");
       doc.setFontSize(12);
       doc.text(105, 358, CLUBADVISOR[2]);
-    } else if (CA === CLUBADVISOR[3]) {
+    } else if (formData.CA === CLUBADVISOR[3]) {
       // doc.addImage(salehamam, "PNG", 130, 304, 50, 40);
       doc.setFont("courier");
       doc.setFontSize(12);
       doc.text(100, 358, CLUBADVISOR[3]); // saleha mam
-    } else if (CA === CLUBADVISOR[4]) {
+    } else if (formData.CA === CLUBADVISOR[4]) {
       // doc.addImage(faiyazsir, "PNG", 130, 300, 50, 40);
       doc.setFont("courier");
       doc.setFontSize(12);
@@ -117,89 +127,95 @@ const Appreciation = () => {
       doc.text(100, 358, CLUBADVISOR[5]);
     }
 
-    doc.save(`${sName}'s_${sEname}_certificate.pdf`);
+    doc.save(`${formData.sName}'s_${formData.sEname}_certificate.pdf`);
   };
 
   return (
     <>
-      <div className=" header w- text-center">
+      <div class="header w- text-center">
         <h2>Appreciation Certificate</h2>
       </div>
-      <div className="container form-outline mt-4  col align-self-center w-50">
-        <form className="py-2 px-3">
-          <label for="fname">Student Name:</label>
+      <div class="container form-outline mt-4 col align-self-center w-50">
+        <form class="py-2 px-3">
+          <label htmlFor="sName">Student Name:</label>
           <input
             class="col-md-4 form-control mb-3"
             type="text"
-            id="fname"
-            name="fname"
-            onChange={(e) => setsName(e.target.value)}
+            id="sName"
+            name="sName"
+            value={formData.sName}
+            onChange={handleChange}
           />
 
-          <label for="YB">
-            Year/branch: <h6 className="text-muted">(Ex: 4 Y/CSE)</h6>
+          <label htmlFor="YearB">
+            Year/branch: <h6 class="text-muted">(Ex: 4 Y/CSE)</h6>
           </label>
           <input
             class="form-control mb-3"
             type="text"
-            id="YB"
-            name="YB"
-            onChange={(e) => setYearB(e.target.value)}
+            id="YearB"
+            name="YearB"
+            value={formData.YearB}
+            onChange={handleChange}
           />
 
-          <label for="POS">Position:</label>
+          <label htmlFor="position">Position:</label>
           <input
             class="form-control mb-3"
             type="text"
-            id="POS"
-            name="POS"
-            onChange={(e) => setPosition(e.target.value)}
+            id="position"
+            name="position"
+            value={formData.position}
+            onChange={handleChange}
           />
 
-          <label for="ClubN">Choose Club:</label>
+          <label htmlFor="Cname">Choose Club:</label>
           <select
             class="form-control mb-3"
-            type="text"
-            id="ClubN"
-            name="ClubN"
-            onChange={(e) => setCname(e.target.value)}
+            id="Cname"
+            name="Cname"
+            value={formData.Cname}
+            onChange={handleChange}
           >
-            <option deafault selected disabled>
+            <option value="" disabled>
               Choose an option
             </option>
             {CLUBS.map((value) => (
-              <option>{value}</option>
+              <option key={value} value={value}>
+                {value}
+              </option>
             ))}
           </select>
 
-          <label for="Edate">Enter Event Date </label>
+          <label htmlFor="Ed">Enter Event Date:</label>
           <input
             class="form-control mb-3"
             type="date"
-            id="Edate"
-            name="Edate"
-            onChange={(e) => setEd(e.target.value)}
+            id="Ed"
+            name="Ed"
+            value={formData.Ed}
+            onChange={handleChange}
           />
 
-          <label for="EventName">Enter Event Name </label>
+          <label htmlFor="sEname">Enter Event Name:</label>
           <input
             class="form-control mb-3"
-            id="EventName"
-            name="EventName"
-            onChange={(e) => setEname(e.target.value)}
+            id="sEname"
+            name="sEname"
+            value={formData.sEname}
+            onChange={handleChange}
           />
-          <label for="CA">Select Your Club Advisor</label>
+
+          <label htmlFor="CA">Select Your Club Advisor:</label>
           <select
             name="CA"
-            className="form-control mb-3 sm"
-            onChange={(e) => setCA(e.target.value)}
+            class="form-control mb-3 sm"
+            value={formData.CA}
+            onChange={handleChange}
           >
-            <option deafault selected disabled>
+            <option value="" disabled>
               Choose an option
             </option>
-            {/* {CA.map((value) => (
-                  <option>{value}</option>
-                ))} */}
             <option>Mr Mohd Suaib</option>
             <option>Dr Mohd Akbar</option>
             <option>Mr Mohd Usman khan</option>
@@ -208,11 +224,10 @@ const Appreciation = () => {
             <option>Mr Anwar Ahmad Sheikh</option>
           </select>
 
-          <br />
+
           <center>
-            {" "}
             <button
-              className="bg-dark text-white btn text-center "
+              class="bg-dark text-white btn text-center"
               onClick={pdfGenerator}
             >
               Download Certificate
