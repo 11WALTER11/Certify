@@ -130,6 +130,39 @@ const Appreciation = () => {
     doc.save(`${formData.sName}'s_${formData.sEname}_certificate.pdf`);
   };
 
+  const validateForm = (e) => {
+    e.preventDefault();
+    if (formData.sName.length === 0) {
+      alert('Student Name is required');
+      return
+    }
+    if(formData.YearB.length === 0) {
+      alert('Year/branch is required');
+      return
+    }
+    if(formData.position.length === 0) {
+      alert('Position is required')
+      return
+    }
+    if(formData.Cname.length === 0) {
+      alert('Club name is required')
+      return
+    }
+    if(formData.Ed.length === 0) {
+      alert('Event Date is required')
+      return
+    }
+    if(formData.sEname.length === 0){
+      alert('Event name is required')
+      return
+    }
+    if(formData.CA.length === 0) {
+      alert('Club Advisor is required')
+      return
+    }
+    pdfGenerator();
+  }
+
   return (
     <>
       <div class="header w- text-center">
@@ -228,7 +261,7 @@ const Appreciation = () => {
           <center>
             <button
               class="bg-dark text-white btn text-center"
-              onClick={pdfGenerator}
+              onClick={validateForm}
             >
               Download Certificate
             </button>
