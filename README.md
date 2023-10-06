@@ -39,7 +39,7 @@ npm run test
 * Github: [@11WALTER11](https://github.com/11WALTER11)
 * LinkedIn: [@arish00](https://linkedin.com/in/arish00)
 
-## 🤝 Contributing
+## 🤝 Contributing 
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/11WALTER11/CertificateGenerator/issues). 
 

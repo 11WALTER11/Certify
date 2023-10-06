@@ -4,7 +4,6 @@ import "./App.css";
 import { useState } from "react";
 import Appreciation from "./components/Appreciation";
 import Participationc from "./components/Participationc";
-import Header from "./components/header";
 import Footer from "./components/footer";
 
 // const events = ["Skit" , "Singing Competition" , "Feel the Reel","xquizite","Ibm Bootcamp " ,

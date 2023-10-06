@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import jsPDF from "jspdf";
 // import * as XLSX from "xlsx";
-import ReactLoading from "react-loading";
 
 import PCertificate from "../certificate/participationC.png";
 // import akbarsir from "../Signatures/akbarsir.png";
