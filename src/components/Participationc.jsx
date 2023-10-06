@@ -11,17 +11,6 @@ import PCertificate from "../certificate/participationC.png";
 // import usmansir from "../Signatures/usmansir.png";
 // import salehamam from "../Signatures/salehamam.png";
 
-const Random = (length) => {
-  var result = "";
-  var characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  var charactersLength = characters.length;
-  for (var i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
-};
-
 const Participationc = () => {
   const EventShortForm = () => {
     if (formData.Cname === "Tech Club") {
@@ -61,7 +50,7 @@ const Participationc = () => {
     sName: "",
     YearB: "",
     sEname: "",
-    Cname: "", 
+    Cname: "",
     Ed: "",
     CA: "",
   });
@@ -83,7 +72,11 @@ const Participationc = () => {
 
     doc.setFontSize(9);
     doc.setFont("time", "bold");
-    doc.text(389, 73, `IU/CSE/AMC-${EventShortForm()}/${formData.Ed}/${Random(5)}`);
+    doc.text(
+      389,
+      73,
+      `IU/CSE/AMC-${EventShortForm()}/${formData.Ed}/${Random(5)}`
+    );
 
     doc.setFontSize(13);
     doc.setFont("time", "bold");
