@@ -6,7 +6,7 @@
 > Certify is a react application used to generate certificates (Client: React.Js , Library: JsPDF)
 
 
-### 🏠 [Homepage](https://github.com/11WALTER11/CertificateGenerator)
+### 🏠 [Homepage](https://certifyyy.netlify.app/)
 
 ## Install
 
